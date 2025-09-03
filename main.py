@@ -43,7 +43,7 @@ def connect_to_base(host, port, user, password):
         logger.error(f"Error loading to connect: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error loading the model: {str(e)}")
     
-client_ch = connect_to_base(os.environ.get(CH_HOST), os.environ.get(CH_PORT), os.environ.get(CH_USER), os.environ.get(CH_PASSWORD))  
+client_ch = connect_to_base(os.environ.get('CH_HOST'), os.environ.get('CH_PORT'), os.environ.get('CH_USER'), os.environ.get('CH_PASSWORD'))  
     
     
 # Инструмент 1: Безопасный ClickHouse запрос
@@ -170,4 +170,5 @@ if __name__ == "__main__":
         if query == 'стоп': break
         # ответ от OpenAI
         result = agent.invoke({"input": query})
+
         print(f"\nРезультат:\n{result['output']}")

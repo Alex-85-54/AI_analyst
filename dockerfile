@@ -10,4 +10,5 @@ RUN python3 -m pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "all_code.py"]
+
+CMD ["python", "main.py"]
